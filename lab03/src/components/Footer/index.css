@@ -1,0 +1,31 @@
+.footer{
+    background-color: #1D2228;
+    padding: 20px 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 500px;
+}
+.left .footerEnd{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 13px;
+}
+
+.footer .right{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+.footer input{
+    width: auto;
+    height: 30px;
+}
+.footer button{
+    width: auto;
+    height: 30px;
+    margin-left: 20px;
+}
