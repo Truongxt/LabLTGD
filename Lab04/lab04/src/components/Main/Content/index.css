@@ -1,0 +1,32 @@
+/* .content{
+    text-align: center;
+}
+.content .list{
+    display: flex;
+    list-style-type: none;
+
+}
+.content .list .box{
+    padding: 7px;
+    border-radius: 15px;
+}
+.content .list .box:nth-child(1){
+    background-color: #FFF0F5;
+    color: #D296AE;
+}
+
+
+.content .list .box:nth-child(2){
+    background-color: #F4F0FC;
+    color: #CEB6F0;
+}
+
+.content .list .box:nth-child(3){
+    background-color: #FFF0F5;
+    color: #D296AE;
+}
+
+.content .list .box:nth-child(4){
+    background-color: #EEFBFF;
+    color: #699C9E;
+} */
