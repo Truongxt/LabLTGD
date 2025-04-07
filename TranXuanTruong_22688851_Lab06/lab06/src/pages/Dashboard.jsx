@@ -17,9 +17,9 @@ function Dashboard() {
     };
 
     useEffect(() => {
-        fetch("https://dummyjson.com/users")
+        fetch("http://localhost:3000/users")
             .then(res => res.json())
-            .then(data => setData(data.users));
+            .then(data => setData(data));
     }, []);
 
     const handleEditClick = (row) => {
@@ -38,11 +38,30 @@ function Dashboard() {
     };
 
     const handleSave = () => {
-        const updatedData = data.map(item =>
-            item.id === editingRow.id ? editingRow : item
-        );
-        setData(updatedData);
-        handleModalClose();
+        fetch(`http://localhost:3000/users/${editingRow.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(editingRow),
+        })
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Failed to update user");
+                }
+                return res.json();
+            })
+            .then((updatedUser) => {
+                const updatedData = data.map((item) =>
+                    item.id === updatedUser.id ? updatedUser : item
+                );
+                setData(updatedData);
+                handleModalClose();
+            })
+            .catch((error) => {
+                console.error("Error updating user:", error);
+                alert("Update failed!");
+            });
     };
     return (
         <div>

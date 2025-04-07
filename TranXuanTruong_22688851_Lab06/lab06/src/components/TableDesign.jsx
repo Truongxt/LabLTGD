@@ -2,7 +2,6 @@
 import { Outlet } from "react-router";
 
 function TableDesign() {
-    
 
     return (
         <div className="table-design">
