@@ -18,6 +18,22 @@ function TableDesign() {
             .then(res => res.json())
             .then(data => setData(data.users));
     }, []);
+
+    const handleEditClick = (row) => {
+        setEditingRow(row);
+        setShowModal(true);
+    };
+
+    const handleModalClose = () => {
+        setShowModal(false);
+        setEditingRow(null);
+    };
+
+    const handlePageClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+
     return (
         <div className="table-design">
             <div className="overview" style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
@@ -112,7 +128,46 @@ function TableDesign() {
                         ))}
                     </div>
                 </div>
-                
+                {showModal && (
+                    <div style={{
+                        position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+                        backgroundColor: "rgba(0,0,0,0.5)",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        zIndex: 999
+                    }}>
+                        <div style={{
+                            backgroundColor: "#fff", padding: 20, borderRadius: 8, width: 400
+                        }}>
+                            <h2>Edit Customer</h2>
+                            <label>First Name: </label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                value={editingRow.firstName}
+                                style={{ width: "100%", marginBottom: 10 }}
+                            />
+                            <label>Last Name: </label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                value={editingRow.lastName}
+                                style={{ width: "100%", marginBottom: 10 }}
+                            />
+                            <label>Role: </label>
+                            <input
+                                type="text"
+                                name="role"
+                                value={editingRow.role}
+                                style={{ width: "100%", marginBottom: 10 }}
+                            />
+
+                            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 10 }}>
+                                <button onClick={handleModalClose} style={{ marginRight: 10 }}>Cancel</button>
+                                <button>Save</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
