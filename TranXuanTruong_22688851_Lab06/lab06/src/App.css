@@ -1,0 +1,137 @@
+.navbar{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(148, 137, 137,0.5);
+    padding: 30px;
+
+}
+
+.navbar .menu ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
+  text-decoration: none;
+  align-items: center;
+}
+.navbar .menu ul li{
+    width: 100%;
+    font-size: 20px;
+    color: white;
+}
+.navbar .menu ul li a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0px;
+}
+.navbar .menu ul li a img {
+  margin-right: 10px;
+}
+.layout-default{
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+.header{
+  display: flex;
+  justify-content: space-between;  
+  width: 100%;
+  border: 1px solid rgb(148, 137, 137,0.5);
+}
+.header .title{
+  color: rgb(235, 120, 139);
+}
+
+.header .search-area{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .search-area img{
+  margin: 0px 10px;
+}
+.header .search-area .search-input img{
+  height: 20px;
+  width: 20px;
+}
+.header .search-area .search-input input{
+  border: none;
+  background-color: aliceblue;
+  padding: 5px;
+  border-radius: 50px;
+  width: 100%;
+}
+.header .search-area .search-input{
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.table-design{
+    padding: 30px;
+    margin: auto;
+}
+.table-design .overview{
+  margin: 0px 10px;
+}
+.table-design .list-card{
+  display: flex;
+}
+
+.table-design .list-card .card{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  width: 400px;
+  background-color: #FFF0F5;
+  margin: 20px 0px;
+  margin-right: 30px;
+
+}
+
+.table-design .list-card .card .cart-icon{
+  border: none;
+  margin-top: 20px;
+}
+.table-design .list-card .card h1{
+  font-size: 40px;
+  font-weight: bold;
+}
+.table-design .list-card .card p{
+  font-size: 18px;
+}
+
+.report .report-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.report .report-info button{
+  margin: 0px 5px;
+  width: 100px;
+  height: 40px;
+  border: 1px solid #CF94A8;
+  color: #CF94A8;
+  background-color: #FFF ;
+  font-weight: bold;
+  cursor: pointer;
+}
+.report .report-button{
+  margin-right: 45px;
+}
+.report .report-content{
+  width: 100%;
+}
+
+.report .report-content table{
+  width: 100%;
+  text-align: left;
+}

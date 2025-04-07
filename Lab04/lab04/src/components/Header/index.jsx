@@ -16,7 +16,7 @@ export default function Header() {
                 </div>
 
                 {/* Search Bar */}
-                <div className="flex items-center space-x-2 bg-white text-black px-3 py-1 rounded-md bg-opacity-50">
+                <div className="flex items-center space-x-2 bg-white text-black px-3 py-1 rounded-md bg-">
                     <img src="./icons8-find-80.png" alt="Search Icon" className="h-6 w-6" />
                     <input
                         type="text"
