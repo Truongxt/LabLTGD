@@ -29,10 +29,18 @@ function TableDesign() {
         setEditingRow(null);
     };
 
-    const handlePageClick = (pageNumber) => {
-        setCurrentPage(pageNumber);
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setEditingRow(prev => ({ ...prev, [name]: value }));
     };
 
+    const handleSave = () => {
+        const updatedData = data.map(item =>
+            item.id === editingRow.id ? editingRow : item
+        );
+        setData(updatedData);
+        handleModalClose();
+    };
 
     return (
         <div className="table-design">
@@ -144,6 +152,7 @@ function TableDesign() {
                                 type="text"
                                 name="firstName"
                                 value={editingRow.firstName}
+                                onChange={handleInputChange}
                                 style={{ width: "100%", marginBottom: 10 }}
                             />
                             <label>Last Name: </label>
@@ -151,6 +160,7 @@ function TableDesign() {
                                 type="text"
                                 name="lastName"
                                 value={editingRow.lastName}
+                                onChange={handleInputChange}
                                 style={{ width: "100%", marginBottom: 10 }}
                             />
                             <label>Role: </label>
@@ -158,12 +168,13 @@ function TableDesign() {
                                 type="text"
                                 name="role"
                                 value={editingRow.role}
+                                onChange={handleInputChange}
                                 style={{ width: "100%", marginBottom: 10 }}
                             />
 
                             <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 10 }}>
                                 <button onClick={handleModalClose} style={{ marginRight: 10 }}>Cancel</button>
-                                <button>Save</button>
+                                <button onClick={handleSave}>Save</button>
                             </div>
                         </div>
                     </div>
