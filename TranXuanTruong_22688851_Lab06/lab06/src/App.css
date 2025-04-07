@@ -134,4 +134,54 @@
 .report .report-content table{
   width: 100%;
   text-align: left;
+  height: 400px;
+}
+
+/* Table styles */
+table.display {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+}
+
+table.display th,
+table.display td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table.display thead {
+  background-color: #f0f4f8;
+}
+
+table.display th {
+  color: #333;
+  font-weight: bold;
+}
+
+table.display tr:hover {
+  background-color: #f9f9f9;
+}
+
+table.display td h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Optional: icon column style */
+table.display td:last-child {
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Pagination styles */
+.pagination button {
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+  color: white;
 }
