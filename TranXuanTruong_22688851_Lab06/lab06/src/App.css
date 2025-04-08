@@ -139,15 +139,36 @@
 
 .report .report-content table{
   width: 100%;
-  text-align: left;
+  text-align: center;
   height: 400px;
 }
+.report .report-content table .orderDate{
+  font-weight: lighter;
+  color: #ada5a5;
+}
 
-/* Table styles */
+.report .report-content table .status{
+  padding: 7px;
+  border-radius: 30px;
+}
+.report .report-content table .status.new{
+  background-color: #E9F7FC;
+  color: rgb(126, 126, 248);
+}
+
+.report .report-content table .status.process{
+  background-color: #96A125;
+  color: yellow;
+}
+
+.report .report-content table .status.complete{
+  background-color: #EDFDF3;
+  color: green;
+}
 table.display {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 15px; 
   font-family: Arial, sans-serif;
 }
 
@@ -157,7 +178,9 @@ table.display td {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-
+table.display tr th:last-child{
+  text-align: center;
+}
 table.display thead {
   background-color: #f0f4f8;
 }
@@ -174,15 +197,14 @@ table.display tr:hover {
 table.display td h3 {
   margin: 0;
   font-size: 16px;
+  
 }
 
-/* Optional: icon column style */
 table.display td:last-child {
   text-align: center;
   cursor: pointer;
 }
 
-/* Pagination styles */
 .pagination button {
   transition: background-color 0.3s ease;
 }

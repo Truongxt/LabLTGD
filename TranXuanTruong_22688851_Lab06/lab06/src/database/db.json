@@ -73,7 +73,7 @@
     {
       "id": 2,
       "firstName": "Michael",
-      "lastName": "Williams",
+      "lastName": "Jackson",
       "maidenName": "",
       "age": 35,
       "gender": "male",
@@ -2099,6 +2099,114 @@
         "network": "Ethereum (ERC20)"
       },
       "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "customerName": "Elizabeth Huge",
+      "img": "./Avatar.png",
+      "company": "AvatarSystems",
+      "orderValue": 359,
+      "orderDate": "2023-07-10",
+      "status": "New"
+    },
+    {
+      "id": 2,
+      "img": "./Avatar 313.png",
+      "customerName": "Carlos Garcia",
+      "company": "SmoozeShift",
+      "orderValue": 747,
+      "orderDate": "2023-07-24",
+      "status": "New"
+    },
+    {
+      "id": 3,
+      "customerName": "Elizabeth Bailey",
+      "img": "./Avatar (1).png",
+      "company": "Prime Time Telecom",
+      "orderValue": 564,
+      "orderDate": "2023-08-08",
+      "status": "In-progress"
+    },
+    {
+      "id": 4,
+      "customerName": "Ryan Brown",
+      "img": "./Avatar (2).png",
+      "company": "OmniTech Corporation",
+      "orderValue": 541,
+      "orderDate": "2023-08-31",
+      "status": "In-progress"
+    },
+    {
+      "id": 5,
+      "customerName": "Ryan Young",
+      "img": "./Avatar (3).png",
+      "company": "DataStream Inc.",
+      "orderValue": 769,
+      "orderDate": "2023-05-01",
+      "status": "Completed"
+    },
+    {
+      "id": 6,
+      "customerName": "Hailey Adams",
+      "img": "./Avatar (4).png",
+      "company": "FlowRush",
+      "orderValue": 922,
+      "orderDate": "2023-06-10",
+      "status": "Completed"
+    },
+    {
+      "id": 7,
+      "img": "./Avatar (5).png",
+      "customerName": "Sophia Nguyen",
+      "company": "TechNova",
+      "orderValue": 680,
+      "orderDate": "2023-09-12",
+      "status": "New"
+    },
+    {
+      "id": 8,
+      "img": "./Avatar (1).png",
+      "customerName": "James Wilson",
+      "company": "InnovateX",
+      "orderValue": 430,
+      "orderDate": "2023-09-18",
+      "status": "In-progress"
+    },
+    {
+      "id": 9,
+      "img": "./Avatar 313.png",
+      "customerName": "Mia Thompson",
+      "company": "BrightFuture Ltd.",
+      "orderValue": 812,
+      "orderDate": "2023-10-05",
+      "status": "Completed"
+    },
+    {
+      "id": 10,
+      "img": "./Avatar (3).png",
+      "customerName": "Liam Martinez",
+      "company": "NextGen Solutions",
+      "orderValue": 295,
+      "orderDate": "2023-10-22",
+      "status": "New"
+    },
+    {
+      "id": 11,
+      "customerName": "Olivia Chen",
+      "company": "SkyNet Global",
+      "orderValue": 501,
+      "orderDate": "2023-11-03",
+      "status": "Completed"
+    },
+    {
+      "customerName": "Thai Xuan Vinh",
+      "company": "IUH",
+      "orderValue": "399",
+      "orderDate": "25-01-2004",
+      "status": "New",
+      "id": 12
     }
   ]
 }
