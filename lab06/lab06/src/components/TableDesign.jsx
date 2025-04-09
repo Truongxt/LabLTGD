@@ -57,7 +57,7 @@ function TableDesign() {
                 </div>
 
                 <div className="report-content">
-                    <Dashboard/>
+                    <Outlet/>
                     
                 </div>
              
