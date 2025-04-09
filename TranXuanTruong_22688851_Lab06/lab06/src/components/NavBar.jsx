@@ -8,7 +8,7 @@ function NavBar() {
                 <div className="menu">
                     <ul>
                         <li>
-                            <NavLink to={"/"}  className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+                            <NavLink to={"/"} >
                                 <img src="./Squares four 1.png" alt="" />
                                 DashBoard
                             </NavLink>

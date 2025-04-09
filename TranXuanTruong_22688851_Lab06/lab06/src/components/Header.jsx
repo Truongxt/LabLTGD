@@ -5,7 +5,7 @@ function Header(){
                 <h3 className="title">Dashboard</h3>
                 <div className="search-area">
                         <div className="search-input">
-                                <img src="./search.png" alt="" />
+                                <img src="./Search.png" alt="" />
                                 <input type="text" placeholder="Search....." />
                         </div>
                         <img src="./Bell 1.png" alt="" />
