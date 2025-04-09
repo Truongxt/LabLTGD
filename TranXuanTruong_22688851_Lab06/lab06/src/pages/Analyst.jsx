@@ -1,7 +1,7 @@
 function Analyst() {
     return (
-        <div>
-            Analyst
+        <div style={{textAlign: "center"}}>
+             <h2>Analyst</h2>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 function Intergration() {
     return (
-        <div>
-            Integration
+        <div style={{ textAlign: "center" }}>
+            <h2>Intergration</h2>
         </div>
     )
 }

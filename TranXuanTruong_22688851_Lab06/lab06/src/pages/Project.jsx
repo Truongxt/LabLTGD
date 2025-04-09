@@ -1,7 +1,7 @@
 function Project() {
     return (
-        <div>
-                Project
+        <div style={{ textAlign: "center" }}>
+            <h2>Project</h2>
         </div>
     )
 }

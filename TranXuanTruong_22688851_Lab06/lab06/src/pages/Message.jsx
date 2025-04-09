@@ -1,7 +1,7 @@
 function Message() {
     return (
-        <div>
-            Message
+        <div style={{ textAlign: "center" }}>
+            <h2>Message</h2>
         </div>
     )
 }

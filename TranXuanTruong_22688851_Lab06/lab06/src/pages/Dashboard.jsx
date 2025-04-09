@@ -181,7 +181,7 @@ function Dashboard() {
                         />
                         <label>Order Date: </label>
                         <input
-                            type="text"
+                            type="date"
                             name="orderDate"
                             value={editingRow.orderDate}
                             onChange={handleInputChange}

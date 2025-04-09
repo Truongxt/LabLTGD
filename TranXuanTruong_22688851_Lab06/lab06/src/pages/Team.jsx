@@ -1,7 +1,7 @@
 function Team() {
     return (
-        <div>
-             Team
+        <div style={{ textAlign: "center" }}>
+            <h2>Team</h2>
         </div>
     )
 }
