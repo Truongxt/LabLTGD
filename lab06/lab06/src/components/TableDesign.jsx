@@ -1,5 +1,6 @@
 
 import { Outlet } from "react-router";
+import Dashboard from "../pages/Dashboard";
 
 function TableDesign() {
 
@@ -56,7 +57,7 @@ function TableDesign() {
                 </div>
 
                 <div className="report-content">
-                    <Outlet />
+                    <Dashboard/>
                     
                 </div>
              
