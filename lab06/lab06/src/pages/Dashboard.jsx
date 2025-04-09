@@ -27,13 +27,29 @@ function Dashboard() {
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        {data.map((row, index) => (
+                            <tr key={index}>
+                                <td >
+                                    <div style={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+                                        <img src={row.img} alt="" style={{ marginRight: 10 }} />
+                                        <h3>{row.customerName}</h3>
+                                    </div>
+                                </td>
+                                <td>{row.company}</td>
+                                <td>${row.orderValue}</td>
+                                <td className="orderDate">{row.orderDate}</td>
+                                <td style={{ textAlign: "center" }}><span className={`status ${row.status === "New" ? "new" : row.status === "Completed" ? "complete" : "process"}`}>
+                                    {row.status}
+                                </span></td>
+                                <td style={{ cursor: "pointer" }}>✏️</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
 
             </div>
-            </div>
+        </div>
     )
 }
 
-            export default Dashboard
+export default Dashboard
