@@ -13,15 +13,30 @@ function Dashboard() {
     const currentRows = data.slice(indexOfFirstRow, indexOfLastRow);
     const totalPages = Math.ceil(data.length / rowsPerPage);
 
-    const handlePageClick = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
+
 
     useEffect(() => {
         fetch("http://localhost:3000/orders")
             .then(res => res.json())
             .then(data => setData(data));
     }, []);
+
+    const handlePageClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+    const handleAddClick = () => {
+        setEditingRow({
+            customerName: "",
+            company: "",
+            orderValue: "",
+            orderDate: "",
+            status: "",
+        });
+        setIsEditing(false);
+        setShowModal(true);
+    };
+
+
 
     const handleEditClick = (row) => {
         setEditingRow(row);
@@ -44,6 +59,8 @@ function Dashboard() {
 
     const handleSave = () => {
 
+        if (isEditing) {
+            // Cập nhật
             fetch(`http://localhost:3000/orders/${editingRow.id}`, {
                 method: "PUT",
                 headers: {
@@ -59,11 +76,29 @@ function Dashboard() {
                     setData(updatedData);
                     handleModalClose();
                 });
-                alert("Chỉnh sửa thành công")
+                alert("Chỉnh sửa thông tin customer thành công")
+        } else {
+            // Thêm mới
+            fetch("http://localhost:3000/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(editingRow),
+            })
+                .then(res => res.json())
+                .then(newUser => {
+                    setData([...data, newUser]);
+                    handleModalClose();
+                });
+                alert("Thêm thông tin customer thành công")
+        }
     };
     return (
         <div>
             <div style={{ marginBottom: 10, textAlign: "right" }}>
+                <button onClick={handleAddClick}>➕ Add New</button>
+
             </div>
             <table id="myTable" className="display">
                 <thead>
@@ -158,7 +193,7 @@ function Dashboard() {
                             onChange={handleInputChange}
                             style={{ width: "100%", marginBottom: 10 }}
                         />
-                         <label>Status: </label>
+                        <label>Status: </label>
                         <input
                             type="text"
                             name="status"
