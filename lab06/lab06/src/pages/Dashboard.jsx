@@ -59,6 +59,7 @@ function Dashboard() {
                     setData(updatedData);
                     handleModalClose();
                 });
+                alert("Chỉnh sửa thành công")
     };
     return (
         <div>

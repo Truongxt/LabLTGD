@@ -54,6 +54,26 @@ function Dashboard() {
 
     };
 
+    const handleSave = () => {
+
+            // Cập nhật
+            fetch(`http://localhost:3000/orders/${editingRow.id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(editingRow),
+            })
+                .then(res => res.json())
+                .then(updatedUser => {
+                    const updatedData = data.map(item =>
+                        item.id === updatedUser.id ? updatedUser : item
+                    );
+                    setData(updatedData);
+                    handleModalClose();
+                });
+
+    };
     return (
         <div>
             <div style={{ marginBottom: 10, textAlign: "right" }}>
