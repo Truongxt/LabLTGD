@@ -76,7 +76,7 @@ function Dashboard() {
                     setData(updatedData);
                     handleModalClose();
                 });
-                alert("Chỉnh sửa thông tin customer thành công")
+            alert("Chỉnh sửa thông tin customer thành công")
         } else {
             // Thêm mới
             fetch("http://localhost:3000/orders", {
@@ -91,13 +91,23 @@ function Dashboard() {
                     setData([...data, newUser]);
                     handleModalClose();
                 });
-                alert("Thêm thông tin customer thành công")
+            alert("Thêm thông tin customer thành công")
         }
     };
     return (
         <div>
             <div style={{ marginBottom: 10, textAlign: "right" }}>
-                <button onClick={handleAddClick}>➕ Add New</button>
+                <button onClick={handleAddClick} style={{
+                    padding: "8px 16px",
+                    backgroundColor: "#28a745",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    marginRight: "30px"
+                }}>➕ Add New</button>
 
             </div>
             <table id="myTable" className="display">
@@ -151,59 +161,52 @@ function Dashboard() {
                 ))}
             </div>
             {showModal && (
-                <div style={{
-                    position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: "rgba(0,0,0,0.5)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    zIndex: 999
-                }}>
-                    <div style={{
-                        backgroundColor: "#fff", padding: 20, borderRadius: 8, width: 400
-                    }}>
+                <div className="modal-overlay">
+                    <div className="modal-container">
                         <h2>{isEditing ? "Edit Customer" : "Add New Customer"}</h2>
-                        <label>Name: </label>
+
+                        <label>Name:</label>
                         <input
                             type="text"
                             name="customerName"
                             value={editingRow.customerName}
                             onChange={handleInputChange}
-                            style={{ width: "100%", marginBottom: 10 }}
                         />
-                        <label>Company: </label>
+
+                        <label>Company:</label>
                         <input
                             type="text"
                             name="company"
                             value={editingRow.company}
                             onChange={handleInputChange}
-                            style={{ width: "100%", marginBottom: 10 }}
                         />
-                        <label>Order Value ($): </label>
+
+                        <label>Order Value ($):</label>
                         <input
                             type="text"
                             name="orderValue"
                             value={editingRow.orderValue}
                             onChange={handleInputChange}
-                            style={{ width: "100%", marginBottom: 10 }}
                         />
-                        <label>Order Date: </label>
+
+                        <label>Order Date:</label>
                         <input
                             type="date"
                             name="orderDate"
                             value={editingRow.orderDate}
                             onChange={handleInputChange}
-                            style={{ width: "100%", marginBottom: 10 }}
                         />
-                        <label>Status: </label>
+
+                        <label>Status:</label>
                         <input
                             type="text"
                             name="status"
                             value={editingRow.status}
                             onChange={handleInputChange}
-                            style={{ width: "100%", marginBottom: 10 }}
                         />
 
-                        <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 10 }}>
-                            <button onClick={handleModalClose} style={{ marginRight: 10 }}>Cancel</button>
+                        <div className="modal-buttons">
+                            <button onClick={handleModalClose}>Cancel</button>
                             <button onClick={handleSave}>{isEditing ? "Save" : "Create"}</button>
                         </div>
                     </div>
